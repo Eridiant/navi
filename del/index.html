@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      color: aliceblue;
+    }
+
+    .container {
+      position: relative;
+      height: 100%;
+      background: #000;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .swiper-container {
+      /* width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto; */
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .gallery-top {
+      height: 100%;
+      width: 80%;
+    }
+
+    .gallery-thumbs {
+      height: 50%;
+      width: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .gallery-thumbs .swiper-slide {
+      /* width: 20%; */
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .gallery-thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="swiper-container gallery-top">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0z0-bs87w-Q" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/ffa6e1" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/a6fff8" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/a6ffad" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/f9ffa6" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/ffb8a6" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/ffa6d3" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/ffe0a6" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/1000x600/d8ffa6" alt="">
+        </div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white"></div>
+      <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+    <div class="swiper-container gallery-thumbs">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://img.youtube.com/vi/0z0-bs87w-Q/default.jpg">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/ffa6e1" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/a6fff8" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/a6ffad" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/f9ffa6" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/ffb8a6" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/ffa6d3" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/ffe0a6" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="http://dummyimage.com/200x100/d8ffa6" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Swiper -->
+  
+
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      direction: 'vertical',
+      spaceBetween: 10,
+      slidesPerView: 2,
+      mousewheel: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+  </script>
+</body>
+
+</html>
